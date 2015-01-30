@@ -1,4 +1,1 @@
-learnPythonForMachineLearning
-=============================
-
-learn Python For Machine Learning
+For Machine Learning
