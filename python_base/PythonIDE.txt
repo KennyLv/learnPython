@@ -1,0 +1,9 @@
+﻿Python IDE 
+
+pycharm
+VIM
+Eclipse with PyDev
+Sublime Text
+Komodo Edit
+PyScripter
+Interactive Editor for Python

@@ -1,0 +1,37 @@
+﻿Python解释器
+
+1， https://www.python.org/
+2， https://en.wikipedia.org/wiki/Just-in-time_compilation
+3， http://pypy.readthedocs.org/en/latest/cpython_differences.html
+
+当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。
+
+这里所说的解释执行是相对于编译执行而言的。我们知道，使用诸如C或C++之类的编译性语言编写的程序可以从源文件转换成计算机使用的机器语言，经连接器连接后形成二进制可执行文件。当我们运行二进制可执行程序的时候，因为已经编译好了，所以加载器软件把二进制程序从硬盘载入内存中并运行。与之不同，Python语言写的程序不需要编译成二进制代码，它可以直接从源代码运行程序。当我们运行Python文件程序的时候，Python解释器把源代码转换成中间形式：字节码 （.pyc），然后再由Python虚拟机来执行这些字节码。这样的话，我们就用不着担心程序的编译，库的连接加载等问题了，所有这些工作都由Python虚拟机代劳了。
+
+对于Python的解释语言特性，我们要一分为二的看待。一方面，每次运行时都要进行转换成字节码，然后再由虚拟机把字节码转换成机器语言，最后才能在硬件上运行。较之于编译性编程语言，每次运行都会多出两道工序，所以它的性能会受到影响。另一方面，由于不用关心程序的编译以及库的连接等问题，所以开发工作会变得更轻松；同时虚拟机距离物理机器更远了，所以Python程序更加易于移植，实际上无需改动就能在多种平台上运行。
+
+由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释器来执行Python代码（当然难度很大）。事实上，确实存在多种Python解释器。
+
+CPython
+
+当我们从Python官方网站（注1）下载并安装好Python 2.7后，我们就直接获得了一个官方版本的解释器：CPython。这个解释器是用C语言开发的，所以叫CPython。在命令行下运行python就是启动CPython解释器。CPython是使用最广的Python解释器。教程的所有代码也都在CPython下执行。
+
+IPython
+
+IPython是基于CPython之上的一个交互式解释器，也就是说，IPython只是在交互方式上有所增强，但是执行Python代码的功能和CPython是完全一样的。好比很多国产浏览器虽然外观不同，但内核其实都是调用了IE。CPython用>>>作为提示符，而IPython用In [序号]:作为提示符。
+
+PyPy
+
+PyPy是另一个Python解释器，它的目标是执行速度。PyPy采用JIT技术（注2），对Python代码进行动态编译（注意不是解释），所以可以显著提高Python代码的执行速度。绝大部分Python代码都可以在PyPy下运行，但是PyPy和CPython有一些是不同的，这就导致相同的Python代码在两种解释器下执行可能会有不同的结果。如果你的代码要放到PyPy下执行，就需要了解PyPy和CPython的不同点（注3）。
+
+Jython
+
+Jython是运行在Java平台上的Python解释器，可以直接把Python代码编译成Java字节码执行。
+
+IronPython
+
+IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上的Python解释器，可以直接把Python代码编译成.Net的字节码。
+
+小结
+
+Python的解释器很多，但使用最广泛的还是CPython。如果要和Java或.Net平台交互，最好的办法不是用Jython或IronPython，而是通过网络调用来交互，确保各程序之间的独立性。此外，教程还内嵌一个IPython的Web版本，用来在浏览器内练习执行一些Python代码。要注意两者功能一样，输入的代码一样，但是提示符有所不同。另外，不是所有代码都能在Web版本的IPython中执行，出于安全原因，很多操作（比如文件操作）是受限的，所以有些代码必须在本地环境执行代码。
