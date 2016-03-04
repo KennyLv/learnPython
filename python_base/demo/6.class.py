@@ -79,8 +79,9 @@ print(kk_unknow.gender)
 Human.gender='unknow' #类属性变更
 print(kk_unknow.gender)
 
-
-
+#内置函数
+#dir()用来查询一个类或者对象所有属性
+print (dir(Bird))
 
 
 
