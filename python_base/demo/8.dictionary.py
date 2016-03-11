@@ -50,7 +50,14 @@ print("清空dic, dic_3.clear()    ", dic_3)
 dic_4 = {1: 90, 2: 100, 3: 57, 4: 90}
 print("dic_4 : ", dic_4)
 
-
+# dic[key] 可以重复但是value会覆盖前面的
+dic_5 = {'lilei':90,'tom':50,'lily':80,'sam':70,'tom':60,'tom':100}
+print("dic_5 = {'lilei':90,'tom':50,'lily':80,'sam':70,'tom':60,'tom':100},\nprint dic_5 =", dic_5)
+print( len(dic_5))
+print( dic_5.keys())
+print( dic_5.values())
+for key in dic_5:
+    print( dic_5[key])
 
 
 input('Please enter a code to quit:')

@@ -1,0 +1,36 @@
+﻿
+
+            connectXimalaya
+            disConnectXimalaya
+
+            play
+            pause
+            next
+            previous
+
+            favorite
+            unFavorite
+            
+            getCategories
+
+            getGuessLikeAlbums
+            getMyFavorites
+            getMyDownloads
+            getMyHistories
+            getAlbums
+            getRelativeAlbumsUseTrackId
+
+            getQualityList
+            getQualityContent
+
+
+            getHotTracks
+            getTracks
+            getLastPlayTracks
+
+            getNowPlaying
+            
+            onPlayStateChanged
+            onNetworkStateChanged
+            onAppExited
+            
