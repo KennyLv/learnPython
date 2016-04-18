@@ -56,35 +56,30 @@ try:
 except  StopIteration:
     print ('func_ex StopIteration')
 
+    
+try:
+    1/0 
+except ZeroDivisionError as reason:
+    print( '========', reason)
+    
 #自定义异常
 class ShortInputException(Exception):
     '''A user -defined exception class'''
-    def __init__(self,length,atleast):
+    def __init__(self, length, atleast):
         Exception.__init__(self)
         self.length=length
         self.atleast=atleast
 
-import traceback
+#import traceback
 try:
     s=input('Enter soemthing --> ')
     if len(s) < 3:
         raise ShortInputException(len(s),3)
-except ShortInputException:
-    print(traceback.format_exc())
+except ShortInputException as ex:
+    #print(traceback.format_exc())
+    print("==ShortInputException :  the input was of length %d, was excepting at least %d ." % (ex.length, ex.atleast))
 else:
     print( 'Done')
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 # return 是用于函数返回的，不能打断程序执行，所以try中不能用return。
