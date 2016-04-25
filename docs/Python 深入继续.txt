@@ -1,0 +1,13 @@
+python-pip管理器
+
+装饰器:
+装饰器的核心作用是name binding
+多个装饰器
+http://www.cnblogs.com/vamei/archive/2013/02/16/2820212.html
+
+Python内部机制的部分，如：
+Python是如何处理类型，
+如何解释执行Python代码，
+Python中的模块是怎么加载的，
+与其他语言混合编程（如C语言）
+https://www.douban.com/doulist/1619790/
