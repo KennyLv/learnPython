@@ -7,6 +7,10 @@ import os
 
 path = 'D:\\HBuild_WorkSpace\\learnPython\\src\\testdata.txt'
 
+print( os.getcwd() ) #获取当前工作目录
+os.chdir("目标目录") #更换当前工作目录
+
+
 print('basename : ' , os.path.basename(path))    # 查询路径中包含的文件名
 print('dirname     : ' , os.path.dirname(path))     # 查询路径中包含的目录
 print('split path     : ' , os.path.split(path))   # 将路径分割成文件名和目录两个部分，放在一个表中返回
